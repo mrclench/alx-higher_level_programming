@@ -1,18 +1,15 @@
-0x03. Python - Data Structures: Lists, Tuples
-ALX
-Learning Objectives
-At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
-
-General
+0x09. Python - Everything is object
 Why Python programming is awesome
-What are lists and how to use them
-What are the differences and similarities between strings and lists
-What are the most common methods of lists and how to use them
-How to use lists as stacks and queues
-What are list comprehensions and how to use them
-What are tuples and how to use them
-When to use tuples versus lists
-What is a sequence
-What is tuple packing
-What is sequence unpacking
-What is the del statement and how to use it 
+What is an object
+What is the difference between a class and an object or instance
+What is the difference between immutable object and mutable object
+What is a reference
+What is an assignment
+What is an alias
+How to know if two variables are identical
+How to know if two variables are linked to the same object
+How to display the variable identifier (which is the memory address in the CPython implementation)
+What is mutable and immutable
+What are the built-in mutable types
+What are the built-in immutable types
+How does Python pass variables to functions
