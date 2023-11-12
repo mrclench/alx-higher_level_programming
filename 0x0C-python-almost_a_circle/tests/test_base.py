@@ -1,32 +1,34 @@
-===========================
-Test to base.py - module
-***************************
-""" 0-main """
+#!/usr/bin/python3
+
+import unittest
 from models.base import Base
 
-if __name__ == "__main__":
+class TestBase(unittest.TestCase):
+    def test_default_id(self):
+        b1 = Base()
+        self.assertEqual(b1.id, 1)
 
-    b1 = Base()
-    print(b1.id)
+    def test_incrementing_id(self):
+        b1 = Base()
+        b2 = Base()
+        b3 = Base()
 
-    b2 = Base()
-    print(b2.id)
+        self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 2)
+        self.assertEqual(b3.id, 3)
 
-    b3 = Base()
-    print(b3.id)
+    def test_custom_id(self):
+        b = Base(10)
+        self.assertEqual(b.id, 10)
 
-    b4 = Base(12)
-    print(b4.id)
+    def test_mixed_ids(self):
+        b1 = Base()
+        b2 = Base(5)
+        b3 = Base()
 
-    b5 = Base()
-    print(b5.id)
+        self.assertEqual(b1.id, 1)
+        self.assertEqual(b2.id, 5)
+        self.assertEqual(b3.id, 2)
 
-=======================================
-This module defines class names Base 
-
-Usage
-======================================
-
-::
-
-	>>>
+if __name__ == '__main__':
+    unittest.main()
