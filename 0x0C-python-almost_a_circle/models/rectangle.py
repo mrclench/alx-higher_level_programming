@@ -68,3 +68,10 @@ class Rectangle(Base):
         for _ in range(self.height):
             print("#" * self.width)
         """Used a throwaway variable to loop """
+
+    def __str__(self):
+        """Printing string values of id, weight, height, x, y"""
+        return ("[Rectangle] ({}) {}/{} - {}"
+                "/{}".format(self.id, self.x, self.y, self.width, self.height))
+
+
