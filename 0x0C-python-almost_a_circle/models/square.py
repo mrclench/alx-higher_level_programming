@@ -6,13 +6,6 @@ from models.rectangle import Rectangle
 class Square(Rectangle):
     """
     Square class that inherits from Rectangle class
-    Square class that inherits from Rectangle class.
-
-    Attributes:
-        size (int): The size of the square.
-        x (int): The x-coordinate of the square.
-        y (int): The y-coordinate of the square.
-        id (int): The identifier of the square.
 
     Methods:
         __init__(self, size, x=0, y=0, id=None): Initializes a new Square instance.
@@ -26,3 +19,15 @@ class Square(Rectangle):
     def __str__(self):
         """Printing string value of height and weight"""
         return "[Square] ({}) {}/{} - {}".format(self.id, self.x, self.y, self.size)
+
+    @property
+    def size(self):
+        """getting size"""
+        return self._size
+
+    @size.setter
+    def size(self, value):
+        """setting size"""
+        if type(value) is not int:
+            raise TypeError("width must be an integer")
+        self._size = value
