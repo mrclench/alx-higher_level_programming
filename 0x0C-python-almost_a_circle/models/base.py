@@ -15,8 +15,10 @@ class Base:
 
     @property
     def id(self):
+        """Getting id of the base"""
         return self.__id
 
     @id.setter
     def id(self, value):
+        """Setting ID of the rectangle"""
         self.__id = value
