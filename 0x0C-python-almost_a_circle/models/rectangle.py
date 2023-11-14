@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""Inheriting from class Base"""
 from models.base import Base
 
 
@@ -13,10 +14,12 @@ class Rectangle(Base):
 
     @property
     def width(self):
+        """Getting width of the rectangle"""
         return self.__width
 
     @width.setter
     def width(self, value):
+        """Setting the value of the width"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -25,10 +28,12 @@ class Rectangle(Base):
 
     @property
     def height(self):
+        """Getting height of the rectangle"""
         return self.__height
 
     @height.setter
     def height(self, value):
+        """Setting height of the rectangle"""
         if type(value) is not int:
             raise TypeError("height must be an integer")
 
@@ -38,10 +43,12 @@ class Rectangle(Base):
 
     @property
     def x(self):
+        """Getting X of the rectangle"""
         return self.__x
 
     @x.setter
     def x(self, value):
+        """Setting x of the rectangle"""
         if type(value) is not int:
             raise TypeError("x must be an integer")
         elif value < 0:
@@ -50,10 +57,12 @@ class Rectangle(Base):
 
     @property
     def y(self):
+        """Getting y of the rectangle"""
         return self.__y
 
     @y.setter
     def y(self, value):
+        """Setting y of the rectangle"""
         if type(value) is not int:
             raise TypeError("y must be an integer")
         elif value < 0:
@@ -65,6 +74,7 @@ class Rectangle(Base):
         return self.__width * self.__height
 
     def display(self):
+        """Print stdout value in #"""
         for i in range(self.y):
             print()
             """This prints a new line"""
