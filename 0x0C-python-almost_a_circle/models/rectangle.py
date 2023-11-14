@@ -8,6 +8,7 @@ class Rectangle(Base):
     def __init__(self, width, height, x=0, y=0, id=None):
         """Initializing the class rectangle"""
         super().__init__(id)
+        self.id = None
         self.width = width
         self.height = height
         self.x = x
@@ -86,7 +87,6 @@ class Rectangle(Base):
         """Printing string values of id, weight, height, x, y"""
         return ("[Rectangle] ({}) {}/{} - {}"
                 "/{}".format(self.id, self.x, self.y, self.width, self.height))
-
 
     def update(self, *args):
         """Assigns an argument to each attribute"""
