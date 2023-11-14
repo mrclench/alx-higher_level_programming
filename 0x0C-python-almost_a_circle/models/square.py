@@ -14,7 +14,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """Initializing the class Square"""
         super().__init__(size, size, x, y, id)
-        self.size = size
+        self._size = size
 
     def __str__(self):
         """Printing string value of height and weight"""
@@ -22,14 +22,13 @@ class Square(Rectangle):
 
     @property
     def size(self):
-        """getting size of the square"""
+        """getting width of the square"""
         return self._size
 
     @size.setter
     def size(self, value):
-        """setting size of the square"""
+        """setting width of the square"""
         if type(value) is not int:
             raise TypeError("width must be an integer")
-        if value <= 0:
-            raise ValueError("width must be > 0")
         self._size = value
+
