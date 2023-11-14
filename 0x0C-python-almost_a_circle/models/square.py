@@ -31,4 +31,3 @@ class Square(Rectangle):
         if type(value) is not int:
             raise TypeError("width must be an integer")
         self._size = value
-
