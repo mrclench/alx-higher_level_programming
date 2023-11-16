@@ -32,12 +32,13 @@ class Base:
         """writes the JSON string representation of list_objs to a file"""
         if not isinstance(list_objs, list) and list_objs is not None:
             raise TypeError("list_objs must be a list of instances")
-        if all(isinstance(x, cls) for x in list_objs):
-            filename = cls.__name__ + ".json"
-            with open(filename, 'w') as f:
-                if list_objs is not None:
-                    list_dicts = [x.to_dictionary() for x in list_objs]
-                    json.dump(list_dicts, f)
-            return
 
-        raise TypeError("list_objs must be a list of instances")
+            # Convert list of instances to list of dictionaries
+        list_dicts = [x.to_dictionary() for x in list_objs] if list_objs is not None else []
+
+        # Create the filename using the class name
+        filename = cls.__name__ + ".json"
+
+        # Write the JSON string representation to the file
+        with open(filename, 'w') as f:
+            f.write(cls.to_json_string(list_dicts))
