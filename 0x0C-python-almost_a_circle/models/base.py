@@ -4,8 +4,6 @@
 import json
 
 """imports json"""
-import csv
-import os
 
 
 class Base:
@@ -38,11 +36,12 @@ class Base:
                 """
         if not isinstance(list_objs, list) and list_objs is not None:
             raise TypeError("list_objs must be a list of instances")
-        if not all(isinstance(x, cls) for x in list_objs):
-            raise TypeError("list_objs must be a list of instances")
+        if all(isinstance(x, cls) for x in list_objs):
+            filename = cls.__name__ + ".json"
+            with open(filename, 'w') as f:
+                if list_objs is not None:
+                    list_dicts = [x.to_dictionary() for x in list_objs]
+                    json.dump(list_dicts, f)
+            return
 
-        filename = cls.__name__ + ".json"
-        with open(filename, 'w') as f:
-            if list_objs is not None:
-                list_dicts = [x.to_dictionary() for x in list_objs]
-                json.dump(list_dicts, f)
+        raise TypeError("list_objs must be a list of instances")
