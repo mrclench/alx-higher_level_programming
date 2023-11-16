@@ -29,11 +29,7 @@ class Base:
 
     @classmethod
     def save_to_file(cls, list_objs):
-        """writes the JSON string representation of list_objs to a file
-
-                Args:
-                    list_objs (list): list of instances who inherits of Base
-                """
+        """writes the JSON string representation of list_objs to a file"""
         if not isinstance(list_objs, list) and list_objs is not None:
             raise TypeError("list_objs must be a list of instances")
         if all(isinstance(x, cls) for x in list_objs):
