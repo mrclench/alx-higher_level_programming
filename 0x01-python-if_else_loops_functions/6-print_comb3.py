@@ -6,5 +6,3 @@ for i in range(0, 10):
             print("{}{}".format(i, j), end="\n")
         else:
             print("{}{}".format(i, j), end=", ")
-#    print()
-#    print("{}".format(99), end="\n")
