@@ -1,0 +1,5 @@
+-- A script that creates the MySQL server user user_0d_1
+-- notes : User will have all privileges on my MYSQL server
+-- 	   password will be user_0d_1_pwd
+--	   script shouldnt fail if already exists
+CREATE USER IF NOT EXISTS 'user_0d_1'@'localhost' IDENTIFIED BY 'user_0d_1_pwd';
