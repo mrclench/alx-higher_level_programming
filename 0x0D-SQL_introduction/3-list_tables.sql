@@ -1,2 +1,2 @@
--- shows list of tables when an argument is passed
+-- shows list of tables of a database
 SHOW TABLES;
