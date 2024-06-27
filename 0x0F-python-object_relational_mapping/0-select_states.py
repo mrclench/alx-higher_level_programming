@@ -11,12 +11,12 @@ if __name__ == "__main__":
                          passwd=sys.argv[2],
                          db=sys.argv[3],
                          port=3306)
-cur = db.cursor()
-cur.execute("SELECT * FROM states ORDER BY id ASC")
-rows = cur.fetchall()
-for row in rows:
-    print(row)
-# Close all cursors
-cur.close()
-# Close all databases
-db.close()
+    cur = db.cursor()
+    cur.execute("SELECT * FROM states ORDER BY id ASC")
+    rows = cur.fetchall()
+    for row in rows:
+        print(row)
+    # Close all cursors
+    cur.close()
+    # Close all databases
+    db.close()
